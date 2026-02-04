@@ -1,1 +1,53 @@
 
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Teen Patti Fun Game</title>
+  <style>
+    body {
+      background: green;
+      color: white;
+      text-align: center;
+      font-family: Arial;
+    }
+    button {
+      padding: 10px 20px;
+      font-size: 18px;
+    }
+    .card {
+      display: inline-block;
+      background: white;
+      color: black;
+      padding: 15px;
+      margin: 10px;
+      border-radius: 10px;
+      font-size: 20px;
+    }
+  </style>
+</head>
+<body>
+
+<h1>🎴 Teen Patti Fun Game 🎴</h1>
+
+<button onclick="dealCards()">Deal Cards</button>
+
+<div id="cards"></div>
+
+<script>
+function dealCards() {
+  let suits = ["♠", "♥", "♦", "♣"];
+  let values = ["2","3","4","5","6","7","8","9","10","J","Q","K","A"];
+  let output = "";
+
+  for (let i = 0; i < 3; i++) {
+    let card = values[Math.floor(Math.random()*values.length)] +
+               suits[Math.floor(Math.random()*suits.length)];
+    output += `<div class="card">${card}</div>`;
+  }
+
+  document.getElementById("cards").innerHTML = output;
+}
+</script>
+
+</body>
+</html>
